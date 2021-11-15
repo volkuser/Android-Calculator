@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         previousCalculation = findViewById(R.id.previousCalculation_view);
         display = findViewById(R.id.displayEditText_view);
 
+        previousCalculation.setShowSoftInputOnFocus(false);
         display.setShowSoftInputOnFocus(false);
     }
 
