@@ -22,18 +22,20 @@
 
     <!--main operations-->
     <string name="divideText">÷</string>
+    <string name="expressionDivide">/</string>
     <string name="multiplyText">×</string>
+    <string name="expressionMultiply">*</string>
     <string name="subtractText">-</string>
     <string name="addText">+</string>
     <string name="equalsText">=</string>
 
     <!--other operations-->
-    <string name="trigSinText">sin</string>
-    <string name="trigCosText">cos</string>
-    <string name="trigTanText">tan</string>
-    <string name="trigArcSinText">sin<sup><small>-1</small></sup></string>
-    <string name="trigArcCosText">cos<sup><small>-1</small></sup></string>
-    <string name="trigArcTanText">tan<sup><small>-1</small></sup></string>
+    <string name="sinText">sin</string>
+    <string name="cosText">cos</string>
+    <string name="tanText">tan</string>
+    <string name="arcSinText">sin<sup><small>-1</small></sup></string>
+    <string name="arcCosText">cos<sup><small>-1</small></sup></string>
+    <string name="arcTanText">tan<sup><small>-1</small></sup></string>
     <string name="naturalLogText">ln</string>
     <string name="logText">log</string>
     <string name="squareRootText">√</string>
@@ -42,7 +44,6 @@
     <string name="eText">e</string>
     <string name="xSquaredText">x<sup><small>2</small></sup></string>
     <string name="xPowerYText">x<sup><small>y</small></sup></string>
-    <string name="isPrimeFunctionText">prime</string>
 
     <!--cleaning-->
     <string name="backspaceText">⌫</string>

@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.mariuszgromada.math.mxparser.*;
+
 public class MainActivity extends AppCompatActivity {
 
     // object declaration
@@ -95,6 +97,50 @@ public class MainActivity extends AppCompatActivity {
         updateText(getResources().getString(R.string.addText));
     }
 
+    // other operations
+    public void sin_btn_push(View view){
+        updateText("sin(");
+    }
+    public void cos_btn_push(View view){
+        updateText("cos(");
+    }
+    public void tan_btn_push(View view){
+        updateText("tan(");
+    }
+    public void acrSin_btn_push(View view){
+        updateText("arcsin(");
+    }
+    public void arcCos_btn_push(View view){
+        updateText("arccos(");
+    }
+    public void actTan_btn_push(View view){
+        updateText("arctan(");
+    }
+    public void naturalLog_btn_push(View view){
+        updateText("ln(");
+    }
+    public void log_btn_push(View view){
+        updateText("log(");
+    }
+    public void sqrt_btn_push(View view){
+        updateText("sqrt(");
+    }
+    public void abs_btn_push(View view){
+        updateText("abs(");
+    }
+    public void pi_btn_push(View view){
+        updateText("pi");
+    }
+    public void e_btn_push(View view){
+        updateText("e");
+    }
+    public void xSqr2_btn_push(View view){
+        updateText("^(2)");
+    }
+    public void xSqrY_btn_push(View view){
+        updateText("^(");
+    }
+
     // cleaning
     public void backspace_btn_push(View view) {
         int cursorPosition = display.getSelectionStart();
@@ -116,6 +162,25 @@ public class MainActivity extends AppCompatActivity {
 
     // getting result
     public void equal_btn_push(View view){
-        updateText(getResources().getString(R.string.addText));
+        String userExpression = display.getText().toString();
+
+        previousCalculation.setText(userExpression);
+
+        userExpression = userExpression.replaceAll(getResources().
+                getString(R.string.divideText),
+                getResources().getString(R.string.expressionDivide));
+        userExpression = userExpression.replaceAll(getResources().
+                        getString(R.string.multiplyText),
+                getResources().getString(R.string.expressionMultiply));
+
+        Expression expression = new Expression(userExpression);
+        String result = String.valueOf(expression.calculate());
+
+        double decimalResult = Double.parseDouble(result);
+        if (decimalResult % 1 == 0)
+            result = Integer.toString((int) decimalResult);
+
+        display.setText(result);
+        display.setSelection(result.length());
     }
 }
