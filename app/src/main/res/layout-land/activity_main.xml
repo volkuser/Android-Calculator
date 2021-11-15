@@ -5,24 +5,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_background"
+    android:background="@color/whiteMain"
     tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/previousCalculation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:cursorVisible="false"
-        android:longClickable="false"
-        android:ems="8"
         android:backgroundTint="@android:color/transparent"
+        android:cursorVisible="false"
+        android:ems="8"
+        android:importantForAutofill="no"
+        android:inputType="none"
+        android:longClickable="false"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:textAlignment="textEnd"
-        android:textColor="@color/white"
+        android:textColor="@color/tanAccent"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/displayEditText_view"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/displayEditText_view"
@@ -38,7 +41,7 @@
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:textAlignment="textEnd"
-        android:textColor="@color/white"
+        android:textColor="@color/tanAccent"
         android:textColorHint="@color/greyAccent"
         android:textSize="27sp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
@@ -61,11 +64,13 @@
             android:layout_height="40dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/button_background"
             android:onClick="zero_btn_push"
             android:text="@string/zeroText"
             android:textColor="@color/tanAccent"
             android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/xPowerY_btn"
             app:layout_constraintTop_toBottomOf="@+id/one_btn" />
 
@@ -202,11 +207,13 @@
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/button_background"
             android:onClick="dot_btn_push"
             android:text="@string/dotText"
             android:textColor="@color/tanAccent"
             android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/zero_btn"
             app:layout_constraintTop_toBottomOf="@+id/two_btn" />
 
@@ -215,6 +222,7 @@
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/button_background"
             android:onClick="openParenthesis_btn_push"
             android:text="@string/openParenthesisText"
@@ -228,6 +236,7 @@
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/button_background"
             android:onClick="closeParenthesis_btn_push"
             android:text="@string/closeParenthesisText"
@@ -239,25 +248,27 @@
         <!--main operations-->
         <Button
             android:id="@+id/divide_btn"
-            android:layout_width="70dp"
+            android:layout_width="90dp"
             android:layout_height="40dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/arithmetic_button_background"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/operation_button_background"
             android:onClick="divide_btn_push"
             android:text="@string/divideText"
             android:textColor="@color/tanAccent"
             android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/nine_btn"
             app:layout_constraintTop_toBottomOf="@+id/backspace_btn" />
 
         <Button
             android:id="@+id/multiply_btn"
-            android:layout_width="70dp"
+            android:layout_width="90dp"
             android:layout_height="40dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/arithmetic_button_background"
+            android:background="@drawable/operation_button_background"
             android:onClick="multiply_btn_push"
             android:text="@string/multiplyText"
             android:textColor="@color/tanAccent"
@@ -267,11 +278,11 @@
 
         <Button
             android:id="@+id/subtract_btn"
-            android:layout_width="70dp"
+            android:layout_width="90dp"
             android:layout_height="40dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/arithmetic_button_background"
+            android:background="@drawable/operation_button_background"
             android:onClick="subtract_btn_push"
             android:text="@string/subtractText"
             android:textColor="@color/tanAccent"
@@ -281,15 +292,17 @@
 
         <Button
             android:id="@+id/add_btn"
-            android:layout_width="70dp"
+            android:layout_width="90dp"
             android:layout_height="40dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/arithmetic_button_background"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/operation_button_background"
             android:onClick="add_btn_push"
             android:text="@string/addText"
             android:textColor="@color/tanAccent"
             android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/equals_btn"
             app:layout_constraintTop_toBottomOf="@+id/subtract_btn" />
 
@@ -299,20 +312,24 @@
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/equals_button_background"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/manage_button_background"
             android:onClick="equal_btn_push"
             android:text="@string/equalsText"
             android:textColor="@color/tanAccent"
             android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dot_btn"
             app:layout_constraintTop_toBottomOf="@+id/three_btn" />
 
         <!--other operations-->
         <Button
             android:id="@+id/sin_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
-            android:background="@drawable/button_background"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/operation_button_background"
             android:onClick="sin_btn_push"
             android:text="@string/sinText"
             android:textAllCaps="false"
@@ -323,10 +340,11 @@
 
         <Button
             android:id="@+id/arcSin_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/operation_button_background"
             android:onClick="acrSin_btn_push"
             android:text="@string/arcSinText"
             android:textAllCaps="false"
@@ -337,10 +355,11 @@
 
         <Button
             android:id="@+id/log_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/operation_button_background"
             android:onClick="log_btn_push"
             android:text="@string/logText"
             android:textAllCaps="false"
@@ -351,8 +370,9 @@
 
         <Button
             android:id="@+id/e_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/button_background"
             android:onClick="e_btn_push"
@@ -365,10 +385,11 @@
 
         <Button
             android:id="@+id/cos_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
-            android:background="@drawable/button_background"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/operation_button_background"
             android:onClick="cos_btn_push"
             android:text="@string/cosText"
             android:textAllCaps="false"
@@ -379,11 +400,11 @@
 
         <Button
             android:id="@+id/arcCos_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/operation_button_background"
             android:onClick="arcCos_btn_push"
             android:text="@string/arcCosText"
             android:textAllCaps="false"
@@ -394,11 +415,11 @@
 
         <Button
             android:id="@+id/naturalLog_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/operation_button_background"
             android:onClick="naturalLog_btn_push"
             android:text="@string/naturalLogText"
             android:textAllCaps="false"
@@ -409,7 +430,7 @@
 
         <Button
             android:id="@+id/pi_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -424,25 +445,28 @@
 
         <Button
             android:id="@+id/xSquared_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/button_background"
             android:onClick="xSqr2_btn_push"
             android:text="@string/xSquaredText"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/e_btn"
             app:layout_constraintTop_toBottomOf="@+id/pi_btn" />
 
         <Button
             android:id="@+id/tan_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
-            android:background="@drawable/button_background"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/operation_button_background"
             android:onClick="tan_btn_push"
             android:text="@string/tanText"
             android:textAllCaps="false"
@@ -453,11 +477,11 @@
 
         <Button
             android:id="@+id/arcTan_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/operation_button_background"
             android:onClick="actTan_btn_push"
             android:text="@string/arcTanText"
             android:textAllCaps="false"
@@ -468,7 +492,7 @@
 
         <Button
             android:id="@+id/squareRoot_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -483,7 +507,7 @@
 
         <Button
             android:id="@+id/absolutValue_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -498,16 +522,18 @@
 
         <Button
             android:id="@+id/xPowerY_btn"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/button_background"
             android:onClick="xSqrY_btn_push"
             android:text="@string/xPowerYText"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/xSquared_btn"
             app:layout_constraintTop_toBottomOf="@+id/absolutValue_btn" />
 
@@ -517,7 +543,8 @@
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_marginStart="24dp"
-            android:background="@drawable/clear_button_background"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/manage_button_background"
             android:onClick="clear_btn_push"
             android:text="@string/clearText"
             android:textColor="@color/tanAccent"
@@ -527,15 +554,15 @@
 
         <Button
             android:id="@+id/backspace_btn"
-            android:layout_width="70dp"
+            android:layout_width="90dp"
             android:layout_height="40dp"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/button_background"
             android:onClick="backspace_btn_push"
             android:text="@string/backspaceText"
             android:textColor="@color/tanAccent"
             android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="@+id/divide_btn"
             app:layout_constraintStart_toEndOf="@+id/closeParenthesis_btn"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
